@@ -7,8 +7,9 @@
         {% for book in books %}
             <div class="col-4">
                 <h4>{{ book.title }}</h4>
-                <img src="{{ asset('images/' ~ book.cover )}}" alt="">
+                <img src="{{ asset('images/' ~ book.cover )}}" alt="" class='w-100'>
                 <p>Parution {{ book.parution|date("d/m/Y") }}</p>
+                <a href="{{path('app_book_detail', {'id': book.id } )}}">detail</a>
             </div>
         {% endfor %}
     

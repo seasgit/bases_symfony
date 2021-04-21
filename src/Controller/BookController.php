@@ -23,6 +23,19 @@ class BookController extends AbstractController
     }
 
     /**
+     * @Route("/detail/{id}", name="app_book_detail", methods={"GET"})
+     */
+    public function detail($id): Response
+    {
+        $book = $this->getDoctrine()->getRepository(Book::class)->find($id);
+        //dd($book);
+        return $this->render('book/detail.html.twig', [
+            'book' => $book,
+        ]);
+    }
+
+
+    /**
      * @Route("/test", name="app_test", methods={"GET"})
      */
     public function test(): Response

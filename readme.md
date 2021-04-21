@@ -99,6 +99,8 @@ symfony console doctrine:migrations:migrate
  composer require --dev doctrine/doctrine-fixtures-bundle
  # à propos du cache
  symfony console cache:clear
+ # execution
+ symfony console doctrine:fixtures:load
  ```
  #
  # Controller et BookRepository

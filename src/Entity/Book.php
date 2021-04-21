@@ -32,6 +32,16 @@ class Book
      */
     private $parution;
 
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $resume;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $price;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -69,6 +79,30 @@ class Book
     public function setParution(\DateTimeInterface $parution): self
     {
         $this->parution = $parution;
+
+        return $this;
+    }
+
+    public function getResume(): ?string
+    {
+        return $this->resume;
+    }
+
+    public function setResume(?string $resume): self
+    {
+        $this->resume = $resume;
+
+        return $this;
+    }
+
+    public function getPrice(): ?string
+    {
+        return $this->price;
+    }
+
+    public function setPrice(string $price): self
+    {
+        $this->price = $price;
 
         return $this;
     }
