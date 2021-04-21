@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block main %}
+<div class="container">
+    <div class="row mt-5">
+
+        {% for book in books %}
+            <div class="col-4">
+                <h4>{{ book.title }}</h4>
+                <img src="{{ asset('images/' ~ book.cover )}}" alt="">
+                <p>Parution {{ book.parution|date("d/m/Y") }}</p>
+            </div>
+        {% endfor %}
+    
+    </div>
+</div>
+    
+{% endblock %}
+
+
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+
+    </style>
+{% endblock %}
